@@ -14,13 +14,14 @@ public class SnakesAndLadders {
 		{
 			int x = (int)Math.ceil(Math.random()*6);
 			int type = (int)Math.ceil(Math.random()*3);
-			if(a%2==0)
+			
 				player1(x,type);
 			
 		}
-		
-	        System.out.println("Player1 wins "  );
-	}
+		if (pos1==100)
+	        System.out.println("Player1 wins and number of moves is " +count1 );
+			
+	}		
 
 	public static int player1(int x, int type)
 		{ count1++ ;
@@ -29,19 +30,14 @@ public class SnakesAndLadders {
 		switch(type) 
 		{
 		
-		case 2: 
-		if(pos1 +x<=100)		
+		case 2: 	
 			pos1+=x ;
 		break;
 		case 3: pos1-=x ;
-		if(pos1<0)
-			pos1=0;
+		
 		break;  
 		
 		}
 		return pos1;
 	}
-
-	
-
-	}
+}
