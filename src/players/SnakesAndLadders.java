@@ -9,11 +9,39 @@ public class SnakesAndLadders {
 	static String p2 = "Player2";
 	
 	public static void main(String[] args) {
+		int a=0;
 		while( pos1 != 100 && pos2 != 100 )
 		{
 			int x = (int)Math.ceil(Math.random()*6);
 			int type = (int)Math.ceil(Math.random()*3);
+			if(a%2==0)
+				player1(x,type);
+			
+		}
+		
+	        System.out.println("Player1 wins "  );
 	}
-	}		
 
-}
+	public static int player1(int x, int type)
+		{ count1++ ;
+		
+		System.out.println(p1+": position is " +pos1);
+		switch(type) 
+		{
+		
+		case 2: 
+		if(pos1 +x<=100)		
+			pos1+=x ;
+		break;
+		case 3: pos1-=x ;
+		if(pos1<0)
+			pos1=0;
+		break;  
+		
+		}
+		return pos1;
+	}
+
+	
+
+	}
